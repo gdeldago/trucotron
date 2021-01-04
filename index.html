@@ -1,23 +1,179 @@
-<h2>Trucotron</h2>
+<center>
+<h2 id="trucotron">Estudio del Trucotron.<br>Aportes para la historia del desarrollo de videojuegos en Argentina.</h2>
+<h4>Gustavo Del Dago.</h4>
+</center>
 
-<h3>Modo timba</h3>
+<ul>
+  <li><a href ="#trampa">¿Juego justo?</a></li>
+  <li><a href ="#modo-timba">Modo timba.</a></li>
+  <li><a href ="#reparto-manual">Cartas sueltas y herramientas de depuración.</a></li> 
+  <li><a href ="#mensaje-secreto">Mensaje secreto.</a></li> 
+  <li><a href ="#sabotaje">Sabotaje.</a></li> 
+</ul> 
 
+<h3 id="trampa">¿Juego justo?</h3>
+
+<p>Durante la instancia de envido, la mitad de las veces el programa aceptará el envite sólo luego de comparar sus cartas con las del jugador (algo ilícito).
+El generador de secuencias pseudoaleatorias retorna un valor en el intervalo [0, 255]. Cuando el número retornado es mayor a 127 (la mitad de las veces si todos los números del intervalo tienen idéntica probabilidad), la respuesta dependerá de quien tenga más puntos.</p>
+<p><a href="img/codigo-juego-justo-0.png"><img src="img/codigo-juego-justo-0.png"/></a></p>
+<p><a href="img/codigo-juego-justo-1.png"><img src="img/codigo-juego-justo-1.png"/></a></p>
+<p><a href = "#trucotron"> Inicio.</a></p>
+
+
+<h3 id="modo-timba">Modo timba.</h3>
 <p>Se trata de un modo de operación espcial donde se pueden apostar créditos en cada una de las manos.</p>
-<p><img src="img/modo-timba-0.png" alt="" width="512" height="384"/></p>
-
+<p><a href="img/modo-timba-0.png"><img src="img/modo-timba-0.png" alt="" width="512" height="384"/></a></p>
 <p>Al introducir una ficha, se incrementa la cantidad de créditos disponible. Se puede seleccionar el nivel de riesgo utilizando el menú que está a la izquierda de la pantalla.</p>
-<p><img src="img/modo-timba-1.png" alt="" width="512" height="384"/></p>
-
+<p><a href="img/modo-timba-1.png"><img src="img/modo-timba-1.png" alt="" width="512" height="384"/></a></p>
 <p>La mano se desarrolla normalmente, siguiendo las reglas del truco.</p>
-<p><img src="img/modo-timba-2.png" alt="" width="512" height="384"/></p>
-
-<p>Al concluir cada mano se ajustan los créditos de acuerdo al resultado y al riesgo configurado.</p>
-<p><img src="img/modo-timba-3.png" alt="" width="512" height="384"/></p>
-
+<p><a href="img/modo-timba-2.png"><img src="img/modo-timba-2.png" alt="" width="512" height="384"/></a></p>
+<p>Al concluir cada mano se ajustan los créditos de acuerdo al resultado y al riesgo seleccionado.</p>
+<p><a href="img/modo-timba-3.png"><img src="img/modo-timba-3.png" alt="" width="512" height="384"/></a></p>
 <p>El ciclo comienza nuevamente.</p>
-<p><img src="img/modo-timba-4.png" alt="" width="512" height="384"/></p>
+<p><a href="img/modo-timba-4.png"><img src="img/modo-timba-4.png" alt="" width="512" height="384"/></a></p>
+<p><a href = "#trucotron"> Inicio.</a></p>
+
+
+<h3 id="reparto-manual">Cartas sueltas y herramientas de depuración.</h3>
+<p>Un modo de operación que permite seleccionar las cartas que tendrán los jugadores en cada mano. Problemente se trata de una facilidad destinada a la fase de pruebas.</p>
+<p><a href="img/reparto-manual-0.png"><img src="img/reparto-manual-0.png" alt="" width="512" height="384"/></a></p>
+<p>La ausencia de un mazo y de los controles correspondientes nos permite configurar manos con cartas repetidas.</p>
+<p><a href="img/reparto-manual-1.png"><img src="img/reparto-manual-1.png" alt="" width="512" height="384"/></a></p>
+<p><a href = "#trucotron"> Inicio.</a></p>
+
+
+<h3 id="mensaje-secreto">Mensaje secreto.</h3>
+<p>En el juego existe un mensaje secreto. Posiblemente se trata de una firma de los/las programadores/ras. A continuación se describen los pasos necesarios para visualizar le mensaje. La secuencia se determinó analizando el código asembler generado mediante un proceso de ingeniería inversa. Develar el significado del mensaje es una tarea que sigue pendiente.</p>
+
+<table style="width:70%">
+<tr>
+<td>
+<p>Se deben introducir exactamente 9 fichas, tenidneo en cuenta que, al introducir una ficha, comienza automáticamente la partida y, en consecuencia, se consume un crédito. 
+<br>La pantalla mostrará "8 Créditos".
+<br>Es necesario seleccionar la variante de juego con flor.</p>
+</td>
+<td>
+<a href="img/mensaje-secreto-paso-0.png"><img src="img/mensaje-secreto-paso-0.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Ingresar la secuancia exige mentir la flor. Para ello bastará cantar "flor" cuando no se tenga.
+<br>Luego, se puede seguir jugando la mano normalmente. Cuando la mano termine la máquina indicará que se mintió la flor.
+<br>Desde ese preciso momento debemos mantener presionado:
+<ul>
+  <li><code>Botón</code></li>
+</ul>
+</td>
+<td>
+<a href="img/mensaje-secreto-paso-1.png"><img src="img/mensaje-secreto-paso-1.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Al cabo de un tiempo breve (durante el que mantendremos presionado el <code>Botón</code>) aparecerá en pantalla el "cursor" del menú.
+<br>En ese momento se debe ingresar la siguiente secuencia:
+<ul>
+  <li><code>Palanca Abajo + Botón</code></li>
+  <li><code>Palanca Abajo</code></li>
+  <li><code>Nada</code></li>
+  <li><code>Palanca Abajo + Botón</code></li>
+</ul>
+</p>
+</td>
+<td>
+<a href="img/mensaje-secreto-paso-2.png"><img src="img/mensaje-secreto-paso-2.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>La pantalla mostrará el mensaje secreto. Para continuar con el juego, bastará:
+<ul>
+  <li><code>Palanca Abajo</code></li>
+</ul>
+</td>
+<td>
+<a href="img/mensaje-secreto.png"><img src="img/mensaje-secreto.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+</table>
+<p><a href = "#trucotron"> Inicio.</a></p>
 
 
 
+
+<h3 id="sabotaje">Sabotaje</h3>
+
+<p>Existen dos maneras de dejar la máquina en estado de bloqueo. El estado de bloqueo puede revertirse en algunos casos y si se cuenta con el código de desbloqueo.
+<br>Este efecto no puede apreciarse en la versión actual disponible en MAME ya que se implementó una corrección que impide el borrado de la memoria estática de la máquina. Las pruebas se realizaron empleando un driver (truco.cpp) modificado especialmente para este propósito.</p>
+<table style="width:70%">
+
+<tr>
+<td>
+<p>En ambas es necesario seleccionar la variante de juego con flor.</p>
+</td>
+<td>
+<a href="img/mensaje-secreto-paso-0.png"><img src="img/mensaje-secreto-paso-0.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Ingresar la secuancia exige mentir la flor. Para ello bastará cantar "flor" cuando no se tenga.
+<br>Luego, se puede seguir jugando la mano normalmente. Cuando la mano termine la máquina indicará que se mintió la flor.
+<br>Desde ese preciso momento debemos mantener presionado:
+<ul>
+  <li><code>Botón</code></li>
+</ul>
+</td>
+<td>
+<a href="img/mensaje-secreto-paso-1.png"><img src="img/mensaje-secreto-paso-1.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Al cabo de un tiempo breve (durante el que mantendremos presionado el <code>Botón</code>) aparecerá en pantalla el "cursor" del menú.
+<br>En ese momento se debe ingresar una de las sigiente secuencias:
+
+<ul>
+  <li><code>Palanca Abajo + Botón</code></li>
+  <li><code>Palanca Abajo</code></li>
+  <li><code>Nada</code></li>
+  <li><code>Palanca Abajo + Botón</code></li>
+</ul>
+Esta secuencia mostrará el mensaje secreto cuando haya exactamente 8 créditos, caso contrario bloqueará la máquina.
+
+
+<ul>
+  <li><code>Palanca Arriba + Botón</code></li>
+  <li><code>Palanca Arriba</code></li>
+  <li><code>Nada</code></li>
+  <li><code>Palanca Abajo</code></li>
+</ul>
+En ambos casos, se visualizará un punto rojo debajo del cursor en señal de que se ha recibido la secuencia.
+
+</td>
+
+<td>
+<a href="img/secuencia-bloqueo-activado.png"><img src="img/secuencia-bloqueo-activado.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<p>Una vez ingresada la secuancia, la máquina se boqueará antes de comenzar una nueva partida.
+</td>
+<td>
+<a href="img/desbloqueo-codigo-05505024-clave-04294211.png"><img src="img/desbloqueo-codigo-05505024-clave-04294211.png" alt="" width="512" height="384"/></a>
+</td>
+</tr>
+
+</table>
+<p><a href = "#trucotron"> Inicio.</a></p>
 
 
